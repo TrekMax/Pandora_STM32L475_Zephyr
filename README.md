@@ -55,5 +55,6 @@ west flash
 | [lvgl/lvgl](./projects/lvgl/lvgl) | LVGL | ✅ Done | |
 | [subsys/shell/shell_module](./projects/subsys/shell/shell_module) | Shell | ✅ Done | |
 | [subsys/shell/devmem_load](./projects/subsys/shell/devmem_load) | Shell | ✅ Done | |
+| [subsys/usb/cdc_acm](./projects/subsys/usb/cdc_acm) | USB CDC ACM | 🐛 Debugging | |
 
 
