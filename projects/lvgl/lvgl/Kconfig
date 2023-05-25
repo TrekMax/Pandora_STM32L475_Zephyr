@@ -1,0 +1,14 @@
+# Display drivers
+
+# Copyright (c) 2017 Intel Corporation
+# SPDX-License-Identifier: Apache-2.0
+
+source "Kconfig.zephyr"
+
+menu "Alientek Pandora Board Config"
+
+module = DISPLAY
+module-str = display
+rsource "drivers/display/Kconfig.st7789v"
+
+endmenu

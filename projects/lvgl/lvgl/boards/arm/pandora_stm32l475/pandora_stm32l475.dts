@@ -1,0 +1,198 @@
+/*
+ * Copyright (c) 2017 TsMax
+ *
+ * Based on stm32l475_pandora:
+ *
+ * Copyright (c) 2017 Tisilicon Limited
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+#include <st/l4/stm32l475Xe.dtsi>
+#include <st/l4/stm32l475v(c-e-g)tx-pinctrl.dtsi>
+
+/ {
+	model = "STM32L475 Pandora Development Board";
+	compatible = "st,pandora_stm32l475";
+
+	aliases {
+		led0 = &red_led;
+		pwm-led0 = &pwm_led0;
+		sw0 = &joy_up;
+	};
+
+	chosen {
+		zephyr,console = &usart1;
+		zephyr,shell-uart = &usart1;
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+		zephyr,display = &st7789v_tftlcd_240x240;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+		red_led: led_0 {
+			gpios = <&gpioe 7 GPIO_ACTIVE_HIGH>;
+			label = "User LED_R";
+		};
+		green_led: led_1 {
+			gpios = <&gpioe 8 GPIO_ACTIVE_HIGH>;
+			label = "User LED_G";
+		};
+		blue_led: led_2 {
+			gpios = <&gpioe 9 GPIO_ACTIVE_HIGH>;
+			label = "User LED_B";
+		};
+	};
+
+	gpio_keys {
+		compatible = "gpio-keys";
+		joy_up: joystick_up {
+			label = "joystick up";
+			gpios = <&gpioc 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+		};
+		joy_down: joystick_down {
+			label = "joystick down";
+			gpios = <&gpiod 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+		};
+		joy_left: joystick_left {
+			label = "joystick left";
+			gpios = <&gpiod 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+		};
+		joy_right: joystick_right {
+			label = "joystick right";
+			gpios = <&gpiod 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+		};
+	};
+
+	pwmleds {
+		compatible = "pwm-leds";
+		status = "okay";
+		pwm_led0: pwm_led0 {
+			pwms = <&pwm0 1 PWM_MSEC(20) PWM_POLARITY_NORMAL>;
+		};
+	};
+
+
+	lcd_controller: connector {
+		compatible = "lcd-controller";
+		#gpio-cells = <2>;
+		gpio-map-mask = <0xffffffff 0xffffffc0>;
+		gpio-map-pass-thru = <0 0x3f>;
+		gpio-map =
+			<0 0 &gpiob 7 0>,    /* PB7 LCD_PWR 		*/
+			<1 0 &gpiob 6 0>,    /* PB6 LCD_RESET 	*/
+			<2 0 &gpiob 4 0>,    /* PB5 LCD_WR		*/
+			<3 0 &gpiob 5 0>,    /* PB4 LCD_SPI_SDA	*/
+			<4 0 &gpiob 3 0>,    /* PB3 LCD_SPI_CSK	*/
+			<5 0 &gpiod 7 0>;    /* PD7 LCD_CS		*/
+	};
+};
+
+&spi3 {
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&spi3_sck_pb3 &spi3_mosi_pb5>;
+	cs-gpios = <&gpiod 7 GPIO_ACTIVE_LOW>;
+
+	st7789v_tftlcd_240x240: st7789v@0 {
+		compatible = "curstom,st7789v";
+		spi-max-frequency = <20000000>;
+		reg = <0>;
+		cmd-data-gpios = <&gpiob 4 GPIO_ACTIVE_LOW>;
+		reset-gpios = <&gpiob 6 GPIO_ACTIVE_LOW>;
+		bl-ctrl-gpios = <&gpiob 7 (GPIO_ACTIVE_LOW | GPIO_PULL_DOWN)>;
+		width = <240>;
+		height = <240>;
+		x-offset = <0>;
+		y-offset = <0>;
+		vcom = <0x19>;
+		gctrl = <0x35>;
+		vrhs = <0x12>;
+		vdvs = <0x20>;
+		mdac = <0x00>;
+		gamma = <0x01>;
+		colmod = <0x05>;
+		lcm = <0x2c>;
+		porch-param = [0c 0c 00 33 33];
+		cmd2en-param = [5a 69 02 01];
+		pwctrl1-param = [a4 a1];
+		pvgam-param = [D0 04 0D 11 13 2B 3F 54 4C 18 0D 0B 1F 23];
+		nvgam-param = [D0 04 0C 11 13 2C 3F 44 51 2F 1F 1F 20 23];
+		ram-param = [00 F0];
+		rgb-param = [CD 08 14];
+	};
+};
+
+&quadspi {
+	pinctrl-0 = <&quadspi_clk_pe10 &quadspi_ncs_pe11
+			&quadspi_bk1_io0_pe12 &quadspi_bk1_io1_pe13
+			&quadspi_bk1_io2_pe14 &quadspi_bk1_io3_pe15>;
+	pinctrl-names = "default";
+
+	status = "okay";
+	w25q128jv: qspi-nor-flash@0 {
+			compatible = "st,stm32-qspi-nor";
+			reg = <0>;
+			qspi-max-frequency = <80000000>;
+			size = <0x8000000>;
+			jedec-id = [ef 40 18];
+			spi-bus-width = <4>;
+			status = "okay";
+	};
+};
+
+&timers1 {
+	st,prescaler = <10000>;
+	status = "okay";
+
+	pwm0: pwm {
+		status = "okay";
+		pinctrl-0 = <&tim1_ch1_pe9>;
+		pinctrl-names = "default";
+	};
+};
+
+&clk_lsi {
+	status = "okay";
+};
+
+&clk_hsi {
+	status = "okay";
+};
+
+&pll {
+	div-m = <1>;
+	mul-n = <20>;
+	div-p = <7>;
+	div-q = <2>;
+	div-r = <4>;
+	clocks = <&clk_hsi>;
+	status = "okay";
+};
+
+&rcc {
+	clocks = <&pll>;
+	clock-frequency = <DT_FREQ_M(80)>;
+	ahb-prescaler = <1>;
+	apb1-prescaler = <1>;
+	apb2-prescaler = <1>;
+};
+
+&usart1 {
+	pinctrl-0 = <&usart1_tx_pa9 &usart1_rx_pa10>;
+	pinctrl-names = "default";
+	current-speed = <115200>;
+	status = "okay";
+};
+
+&rtc {
+	clocks = <&rcc STM32_CLOCK_BUS_APB1 0x10000000>,
+		 <&rcc STM32_SRC_LSI RTC_SEL(2)>;
+	status = "okay";
+
+	backup_regs {
+		status = "okay";
+	};
+};
