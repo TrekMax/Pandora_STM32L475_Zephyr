@@ -54,5 +54,6 @@ west flash
 | [drivers/pwm](./projects/drivers/pwm) | PWM | :construction: Todo | |
 | [lvgl/lvgl](./projects/lvgl/lvgl) | LVGL | ✅ Done | |
 | [subsys/shell/shell_module](./projects/subsys/shell/shell_module) | Shell | ✅ Done | |
+| [subsys/shell/devmem_load](./projects/subsys/shell/devmem_load) | Shell | ✅ Done | |
 
 
