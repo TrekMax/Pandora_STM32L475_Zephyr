@@ -39,3 +39,17 @@ cd projects/getting_started/blinky
 west build -p always -b pandora_stm32l475
 west flash
 ```
+
+# Samples list
+
+> Adapt Zephyr RTOS App for Pandora STM32L475 Development Board
+
+| Sample | Description | Status | Notes |
+| ------ | ----------- | ------ | ----- |
+| [getting_started/blinky](./projects/getting_started/blinky) | Blinky | ✅ Done | |
+| [getting_started/button](./projects/getting_started/button) | Hello World | ✅ Done | |
+| [drivers/display](./projects/drivers/display) | Display | ✅ Done | |
+| [drivers/gpio](./projects/drivers/gpio) | GPIO | :construction: Todo | |
+| [drivers/i2c](./projects/drivers/i2c) | I2C | :construction: Todo | |
+| [drivers/pwm](./projects/drivers/pwm) | PWM | :construction: Todo | |
+| [lvgl/lvgl](./projects/lvgl/lvgl) | LVGL | ✅ Done | |
