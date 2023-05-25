@@ -53,3 +53,6 @@ west flash
 | [drivers/i2c](./projects/drivers/i2c) | I2C | :construction: Todo | |
 | [drivers/pwm](./projects/drivers/pwm) | PWM | :construction: Todo | |
 | [lvgl/lvgl](./projects/lvgl/lvgl) | LVGL | ✅ Done | |
+| [subsys/shell/shell_module](./projects/subsys/shell/shell_module) | Shell | ✅ Done | |
+
+
