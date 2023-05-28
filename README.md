@@ -44,19 +44,43 @@ west flash
 
 > Adapt Zephyr RTOS App for Pandora STM32L475 Development Board
 
-| Sample | Description | Status | Notes |
-| ------ | ----------- | ------ | ----- |
-| [getting_started/blinky](./projects/getting_started/blinky) | Blinky | ✅ Done | |
-| [getting_started/button](./projects/getting_started/button) | Hello World | ✅ Done | |
-| [drivers/display](./projects/drivers/display) | Display | ✅ Done | |
-| [drivers/gpio](./projects/drivers/gpio) | GPIO | :construction: Todo | |
-| [drivers/i2c](./projects/drivers/i2c) | I2C | :construction: Todo | |
-| [drivers/pwm](./projects/drivers/pwm) | PWM | :construction: Todo | |
-| [drivers/uart](./projects/drivers/uart) | UART | :construction: Todo | |
-| [drivers/spi_flash](./projects/drivers/spi_flash) | SPI Flash | ✅ Done | |
-| [lvgl/lvgl](./projects/lvgl/lvgl) | LVGL | ✅ Done | |
-| [subsys/shell/shell_module](./projects/subsys/shell/shell_module) | Shell | ✅ Done | |
-| [subsys/shell/devmem_load](./projects/subsys/shell/devmem_load) | Shell | ✅ Done | |
-| [subsys/usb/cdc_acm](./projects/subsys/usb/cdc_acm) | USB CDC ACM | 🐛 Debugging | |
+| Status | Sample | Description | Notes |
+| ------ | ------ | ----------- | ----- |
+| ✅ Done | [getting_started/blinky](./projects/getting_started/blinky) | Blinky | |
+| ✅ Done | [getting_started/button](./projects/getting_started/button) | Hello World | |
+| ✅ Done | [drivers/display](./projects/drivers/display) | Display | |
+| :construction: Todo | [drivers/gpio](./projects/drivers/gpio) | GPIO | |
+| :construction: Todo | [drivers/i2c](./projects/drivers/i2c) | I2C | |
+| :construction: Todo | [drivers/pwm](./projects/drivers/pwm) | PWM | |
+| :construction: Todo | [drivers/uart](./projects/drivers/uart) | UART | |
+| ✅ Done | [drivers/spi_flash](./projects/drivers/spi_flash) | SPI Flash | |
+| ✅ Done | [lvgl/lvgl](./projects/lvgl/lvgl) | LVGL | |
+| ✅ Done | [subsys/shell/shell_module](./projects/subsys/shell/shell_module) | Shell | |
+| ✅ Done | [subsys/shell/devmem_load](./projects/subsys/shell/devmem_load) | Shell | |
+| 🐛 Debugging | [subsys/usb/cdc_acm](./projects/subsys/usb/cdc_acm) | USB CDC ACM | |
 
+
+
+## Peripheral support
+
+The Zephyr stm32l475ve_pandora board configuration supports the following hardware features:
+
+| No. | Support | Peripheral | Interface | Controller | Driver/Component                |
+| --- | ------- | ---------- | --------- | ---------- | ------------------------------- |
+| 1.  | ✅ Done | NOR FLASH  | QSPI  | on-chip | Winbond W25Q128JVQIQ 128Mbit NOR FLASH |
+| 2.  | ✅ Done | LCD-TFT    | SPI   | on-chip | ST7789V 240x240 LCD-TFT |
+| 3.  | :construction: Todo | AHT10      | I2C   | on-chip | AHT10 Temperature and humidity sensor |
+| 4.  | :construction: Todo | ICM2068    | I2C   | on-chip | ICM2068 light environment sensor |
+| 5.  | :construction: Todo | ES8388     | I2S   | on-chip | ES8388 Audio Decoder |
+| 6.  | :construction: Todo | USB-OTG    | USB   | on-chip | OTG USB |
+| 7.  | :construction: Todo | AP6181     | SDIO  | on-chip | AP6181 WIFI |
+| 8.  | :construction: Todo | IR-RX      | GPIO  | on-board | Infrared Receiver(38Khz) |
+| 9.  | :construction: Todo | IR-TX      | GPIO  | on-board | Infrared Transmitter |
+| 10. | ✅ Done | LED        | GPIO  | on-board | LED |
+| 11. | ✅ Done | KEY        | GPIO  | on-board | KEY |
+| 12. | :construction: Todo | MIC        | GPIO  | on-board | MIC |
+| 13. | :construction: Todo | Buzzer     | GPIO  | on-board | Buzzer |
+| 14. | :construction: Todo | RTC        | RTC   | on-chip | RTC |
+| 15. | :construction: Todo | Motor      | GPIO  | on-board | Motor |
+| 16. | :construction: Todo | TF-Card    | SDIO  | on-board | TF-Card |
 
