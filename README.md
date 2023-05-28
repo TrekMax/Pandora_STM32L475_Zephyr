@@ -4,7 +4,9 @@ Adapt Zephyr RTOS App for Pandora STM32L475 Development Board
 
 ## Hardware
 
-[Pandora STM32L475 Development Board](http://www.openedv.com/docs/boards/iot/zdyz_panduola.html)
+Hardware: [Pandora STM32L475 Development Board](http://www.openedv.com/docs/boards/iot/zdyz_panduola.html)
+
+Zephyr: [Zephyr Project Supported Boards - ST STM32L475 Pandora¶](https://docs.zephyrproject.org/latest/boards/arm/pandora_stm32l475/doc/index.html)
 
 ![Pandora STM32L475 Development Board](./assets/images/hardware/Pandora_STM32L475.png)
 
@@ -14,6 +16,8 @@ Adapt Zephyr RTOS App for Pandora STM32L475 Development Board
 - [Zephyr Project Documentation](https://docs.zephyrproject.org/latest/index.html)
 
 - [Getting Started Guide](https://docs.zephyrproject.org/latest/develop/getting_started/index.html)
+
+- [Zephyr Project Supported Boards](https://docs.zephyrproject.org/latest/boards/index.html)
 
 ## Install Zephyr SDK
 
