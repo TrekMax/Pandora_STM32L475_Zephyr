@@ -20,6 +20,7 @@
 		led0 = &red_led;
 		pwm-led0 = &pwm_led0;
 		sw0 = &joy_up;
+		spi-flash0 = &w25q128jv;
 	};
 
 	chosen {
@@ -159,6 +160,11 @@
 };
 
 &clk_hsi {
+	status = "disabled";
+};
+
+&clk_hse {
+	clock-frequency = <DT_FREQ_M(8)>;
 	status = "okay";
 };
 
@@ -167,8 +173,8 @@
 	mul-n = <20>;
 	div-p = <7>;
 	div-q = <2>;
-	div-r = <4>;
-	clocks = <&clk_hsi>;
+	div-r = <2>;
+	clocks = <&clk_hse>;
 	status = "okay";
 };
 
@@ -189,7 +195,7 @@
 
 &rtc {
 	clocks = <&rcc STM32_CLOCK_BUS_APB1 0x10000000>,
-		 <&rcc STM32_SRC_LSI RTC_SEL(2)>;
+		<&rcc STM32_SRC_LSI RTC_SEL(2)>;
 	status = "okay";
 
 	backup_regs {

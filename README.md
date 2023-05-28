@@ -61,7 +61,7 @@ west flash
 | ✅ Done | [lvgl/lvgl](./projects/lvgl/lvgl) | LVGL | |
 | ✅ Done | [subsys/shell/shell_module](./projects/subsys/shell/shell_module) | Shell | |
 | ✅ Done | [subsys/shell/devmem_load](./projects/subsys/shell/devmem_load) | Shell | |
-| 🐛 Debugging | [subsys/usb/cdc_acm](./projects/subsys/usb/cdc_acm) | USB CDC ACM | |
+| :construction: Todo  | [subsys/usb/cdc_acm](./projects/subsys/usb/cdc_acm) | USB CDC ACM | USB Clock Source PLLSAI not support yet |
 
 
 
