@@ -52,6 +52,8 @@ west flash
 | [drivers/gpio](./projects/drivers/gpio) | GPIO | :construction: Todo | |
 | [drivers/i2c](./projects/drivers/i2c) | I2C | :construction: Todo | |
 | [drivers/pwm](./projects/drivers/pwm) | PWM | :construction: Todo | |
+| [drivers/uart](./projects/drivers/uart) | UART | :construction: Todo | |
+| [drivers/spi_flash](./projects/drivers/spi_flash) | SPI Flash | ✅ Done | |
 | [lvgl/lvgl](./projects/lvgl/lvgl) | LVGL | ✅ Done | |
 | [subsys/shell/shell_module](./projects/subsys/shell/shell_module) | Shell | ✅ Done | |
 | [subsys/shell/devmem_load](./projects/subsys/shell/devmem_load) | Shell | ✅ Done | |
