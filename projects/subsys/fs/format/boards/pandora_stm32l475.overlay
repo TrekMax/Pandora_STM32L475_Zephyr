@@ -1,0 +1,36 @@
+/*
+ * Copyright (c) 2023 OS Systems
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+ / {
+	fstab {
+		compatible = "zephyr,fstab";
+		lfs1: lfs1 {
+			compatible = "zephyr,fstab,littlefs";
+			read-size = <256>;
+			prog-size = <256>;
+			cache-size = <4096>;
+			lookahead-size = <256>;
+			block-cycles = <512>;
+			partition = <&storage_partition>;
+			mount-point = "/lfs1";
+			automount;
+		};
+	};
+};
+
+&w25q128jv {
+	partitions {
+		/delete-node/ partition;
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		/* Use the whole flash for the filesystem. */
+		storage_partition: partition@0 {
+			reg = <0x0 DT_SIZE_M(16)>;
+		};
+	};
+};
