@@ -55,6 +55,7 @@ west flash
 | ✅ Done | [drivers/display](./projects/drivers/display) | Display | |
 | :construction: Todo | [drivers/gpio](./projects/drivers/gpio) | GPIO | |
 | :construction: Todo | [drivers/i2c](./projects/drivers/i2c) | I2C | |
+| ✅ Done | [drivers/i2c/shell_scan](./projects/drivers/i2c/shell_scan) | I2C Scan | |
 | :construction: Todo | [drivers/pwm](./projects/drivers/pwm) | PWM | |
 | :construction: Todo | [drivers/uart](./projects/drivers/uart) | UART | |
 | ✅ Done | [drivers/spi_flash](./projects/drivers/spi_flash) | SPI Flash | |

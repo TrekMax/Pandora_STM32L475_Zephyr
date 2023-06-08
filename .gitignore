@@ -1,3 +1,4 @@
-.vscode
-.DS_Store
+.vscode/
+.cache/
 build/
+.DS_Store
