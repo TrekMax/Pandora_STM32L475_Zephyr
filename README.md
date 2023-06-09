@@ -79,13 +79,64 @@ The Zephyr stm32l475ve_pandora board configuration supports the following hardwa
 | 5.  | :construction: Todo | ES8388     | I2S   | on-chip | ES8388 Audio Decoder |
 | 6.  | :construction: Todo | USB-OTG    | USB   | on-chip | OTG USB |
 | 7.  | :construction: Todo | AP6181     | SDIO  | on-chip | AP6181 WIFI |
-| 8.  | :construction: Todo | IR-RX      | GPIO  | on-board | Infrared Receiver(38Khz) |
-| 9.  | :construction: Todo | IR-TX      | GPIO  | on-board | Infrared Transmitter |
-| 10. | ✅ Done | LED        | GPIO  | on-board | LED |
-| 11. | ✅ Done | KEY        | GPIO  | on-board | KEY |
-| 12. | :construction: Todo | MIC        | GPIO  | on-board | MIC |
-| 13. | :construction: Todo | Buzzer     | GPIO  | on-board | Buzzer |
-| 14. | :construction: Todo | RTC        | RTC   | on-chip | RTC |
-| 15. | :construction: Todo | Motor      | GPIO  | on-board | Motor |
-| 16. | :construction: Todo | TF-Card    | SDIO  | on-board | TF-Card |
+| 8.  | :construction: Todo | ICM20608 | I2C  | on-board | ICM20608 6-axis posture sensor |
+| 9.  | :construction: Todo | IR-RX      | GPIO  | on-board | Infrared Receiver(38Khz) |
+| 10. | :construction: Todo | IR-TX      | GPIO  | on-board | Infrared Transmitter |
+| 11. | ✅ Done | LED        | GPIO  | on-board | LED |
+| 12. | ✅ Done | KEY        | GPIO  | on-board | KEY |
+| 13. | :construction: Todo | MIC        | GPIO  | on-board | MIC |
+| 14. | :construction: Todo | Buzzer     | GPIO  | on-board | Buzzer |
+| 15. | :construction: Todo | RTC        | RTC   | on-chip | RTC |
+| 16. | :construction: Todo | Motor      | GPIO  | on-board | Motor |
+| 17. | :construction: Todo | TF-Card    | SPI  | on-board | TF-Card |
+
+### I2C Devcies
+
+| No. | Support | Peripheral | Bus | Controller | Driver/Component                |
+| --- | ------- | ---------- | --------- | ---------- | ------------------------------- |
+| 1.  | :construction: Done | AHT10      | GPIO | on-chip | AHT10 Temperature and humidity sensor |
+| 2.  | :construction: Done | ICM2068    | I2C3   | on-chip | ICM2068 light environment sensor |
+| 3.  | :construction: Done | ES8388     | I2C3   | on-chip | ES8388 Audio Decoder |
+| 4.  | :construction: Todo | ICM20608 | I2C3  | on-board | ICM20608 6-axis posture sensor |
+
+### SPI Devcies
+
+| No. | Support | Peripheral | Interface | Controller | Driver/Component                |
+| --- | ------- | ---------- | --------- | ---------- | ------------------------------- |
+| 1.  | ✅ Done | NOR FLASH  | QSPI  | on-chip | Winbond W25Q128JVQIQ 128Mbit NOR FLASH |
+| 2.  | ✅ Done | LCD-TFT    | SPI   | on-chip | ST7789V 240x240 LCD-TFT |
+| 3.  | :construction: Todo | TF-Card    | SDIO  | on-board | TF-Card |
+
+### USB Devcies
+
+| No. | Support | Peripheral | Interface | Controller | Driver/Component                |
+| --- | ------- | ---------- | --------- | ---------- | ------------------------------- |
+| 1.  | :construction: Todo | USB-OTG    | USB   | on-chip | OTG USB |
+
+### SDIO Devcies
+
+| No. | Support | Peripheral | Interface | Controller | Driver/Component                |
+| --- | ------- | ---------- | --------- | ---------- | ------------------------------- |
+| 1.  | :construction: Todo | AP6181     | SDIO  | on-chip | AP6181 WIFI |
+
+### GPIO Devcies
+
+| No. | Support | Peripheral | Interface | Controller | Driver/Component                |
+| --- | ------- | ---------- | --------- | ---------- | ------------------------------- |
+| 1.  | :construction: Todo | IR-RX      | GPIO  | on-board | Infrared Receiver(38Khz) |
+| 2.  | :construction: Todo | IR-TX      | GPIO  | on-board | Infrared Transmitter |
+| 3.  | :construction: Todo | LED        | GPIO  | on-board | LED |
+| 4.  | :construction: Todo | KEY        | GPIO  | on-board | KEY |
+
+### RTC Devcies
+
+| No. | Support | Peripheral | Interface | Controller | Driver/Component                |
+| --- | ------- | ---------- | --------- | ---------- | ------------------------------- |
+| 1.  | :construction: Todo | RTC        | RTC   | on-chip | RTC |
+
+### I2S Devcies
+
+| No. | Support | Peripheral | Interface | Controller | Driver/Component                |
+| --- | ------- | ---------- | --------- | ---------- | ------------------------------- |
+| 1.  | :construction: Todo | ES8388     | I2S   | on-chip | ES8388 Audio Decoder |
 
