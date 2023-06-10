@@ -1,0 +1,17 @@
+/*
+ * Copyright (c) 2023 Łukasz Hejnak (LeHack) <lehack-ghub@lehack.pl>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&i2c3 {
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&i2c3_scl_pc0 &i2c3_sda_pc1>;
+	icm20608@68 {
+		compatible = "invensense,icm20608";
+		reg = <0x68>;
+		status = "okay";
+		int-gpios = <&gpiod 0 GPIO_ACTIVE_LOW>;
+	};
+};

@@ -54,7 +54,7 @@ west flash
 | ✅ Done | [getting_started/button](./projects/getting_started/button) | Hello World | |
 | ✅ Done | [drivers/display](./projects/drivers/display) | Display | |
 | :construction: Todo | [drivers/gpio](./projects/drivers/gpio) | GPIO | |
-| :construction: Todo | [drivers/i2c](./projects/drivers/i2c) | I2C | |
+| ✅ Done | [drivers/i2c](./projects/drivers/i2c) | I2C | |
 | ✅ Done | [drivers/i2c/shell_scan](./projects/drivers/i2c/shell_scan) | I2C Scan | |
 | :construction: Todo | [drivers/pwm](./projects/drivers/pwm) | PWM | |
 | :construction: Todo | [drivers/uart](./projects/drivers/uart) | UART | |
@@ -79,7 +79,7 @@ The Zephyr stm32l475ve_pandora board configuration supports the following hardwa
 | 5.  | :construction: Todo | ES8388     | I2S   | on-chip | ES8388 Audio Decoder |
 | 6.  | :construction: Todo | USB-OTG    | USB   | on-chip | OTG USB |
 | 7.  | :construction: Todo | AP6181     | SDIO  | on-chip | AP6181 WIFI |
-| 8.  | :construction: Todo | ICM20608 | I2C  | on-board | ICM20608 6-axis posture sensor |
+| 8.  | ✅ Done | ICM20608 | I2C  | on-board | ICM20608 6-axis posture sensor |
 | 9.  | :construction: Todo | IR-RX      | GPIO  | on-board | Infrared Receiver(38Khz) |
 | 10. | :construction: Todo | IR-TX      | GPIO  | on-board | Infrared Transmitter |
 | 11. | ✅ Done | LED        | GPIO  | on-board | LED |
@@ -97,7 +97,7 @@ The Zephyr stm32l475ve_pandora board configuration supports the following hardwa
 | 1.  | :construction: Done | AHT10      | GPIO | on-chip | AHT10 Temperature and humidity sensor |
 | 2.  | :construction: Done | ICM2068    | I2C3   | on-chip | ICM2068 light environment sensor |
 | 3.  | :construction: Done | ES8388     | I2C3   | on-chip | ES8388 Audio Decoder |
-| 4.  | :construction: Todo | ICM20608 | I2C3  | on-board | ICM20608 6-axis posture sensor |
+| 4.  | ✅ Done | ICM20608 | I2C3  | on-board | ICM20608 6-axis posture sensor |
 
 ### SPI Devcies
 
