@@ -9,8 +9,7 @@ find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(lvgl)
 
 add_subdirectory(drivers/display)
-# add_subdirectory(src/ui)
-add_subdirectory(src/ui_pen)
+add_subdirectory(src/ui)
 
 FILE(GLOB app_sources src/*.c)
 target_sources(app PRIVATE ${app_sources})

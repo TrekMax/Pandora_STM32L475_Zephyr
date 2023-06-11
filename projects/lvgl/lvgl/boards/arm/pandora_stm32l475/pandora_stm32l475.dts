@@ -111,7 +111,7 @@
 		gctrl = <0x35>;
 		vrhs = <0x12>;
 		vdvs = <0x20>;
-		mdac = <0x00>;
+		mdac = <0x0>;
 		gamma = <0x01>;
 		colmod = <0x05>;
 		lcm = <0x2c>;

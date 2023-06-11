@@ -21,6 +21,10 @@ lv_obj_t * ui_ScreenHome_Body;
 lv_obj_t * ui_AppName;
 lv_obj_t *ui_AppIcon;
 
+#define UI_SCREEN_WIDTH     (LV_HOR_RES)
+#define UI_SCREEN_HEIGHT    (LV_VER_RES / 10 * 9)
+#define UI_STATUSBAR_HEIGHT (LV_VER_RES / 10)
+
 typedef struct {
     const int id;
     const char *name;
@@ -258,7 +262,7 @@ int ui_set_battery_state(const uint8_t state)
 void ui_StatusBar_init(lv_obj_t *parent)
 {
     ui_StatusBar = lv_obj_create(parent);
-    lv_obj_set_size(ui_StatusBar, 456, 30);
+    lv_obj_set_size(ui_StatusBar, UI_SCREEN_WIDTH, UI_STATUSBAR_HEIGHT);
     lv_obj_set_pos(ui_StatusBar, 0, 4);
 
     lv_obj_set_align(ui_StatusBar, LV_ALIGN_TOP_MID);
@@ -269,7 +273,7 @@ void ui_StatusBar_init(lv_obj_t *parent)
 
     ui_StatusBar_LabBatteryLevel = lv_label_create(ui_StatusBar);
     lv_obj_set_size(ui_StatusBar_LabBatteryLevel, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
-    lv_obj_set_pos(ui_StatusBar_LabBatteryLevel, -24, -10);
+    lv_obj_set_pos(ui_StatusBar_LabBatteryLevel, 0, 0);
 
     lv_obj_set_align(ui_StatusBar_LabBatteryLevel, LV_ALIGN_TOP_RIGHT);
     lv_label_set_text(ui_StatusBar_LabBatteryLevel, "100%");
@@ -326,7 +330,7 @@ void ui_Screen_Home_init(void)
     ui_StatusBar_init(ui_ScreenHome);
 
     ui_ScreenHome_BodyBase = lv_obj_create(ui_ScreenHome);
-    lv_obj_set_size(ui_ScreenHome_BodyBase, 456, 140);
+    lv_obj_set_size(ui_ScreenHome_BodyBase, UI_SCREEN_WIDTH, UI_SCREEN_WIDTH);
     lv_obj_set_pos(ui_ScreenHome_BodyBase, 0, 0);
     lv_obj_set_align(ui_ScreenHome_BodyBase, LV_ALIGN_BOTTOM_LEFT);
     lv_obj_add_flag(ui_ScreenHome_BodyBase, LV_OBJ_FLAG_SCROLL_ONE);     /// Flags

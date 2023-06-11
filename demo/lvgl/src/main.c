@@ -96,8 +96,7 @@ int main(void)
 	lv_obj_align(count_label, LV_ALIGN_BOTTOM_MID, 0, 0);
 
 	ui_init();
-	// extern void lvgl_create_rect_simple_test(void);
-	// lvgl_create_rect_simple_test();
+
 	lv_task_handler();
 	display_blanking_off(display_dev);
 

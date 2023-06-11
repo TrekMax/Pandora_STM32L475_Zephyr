@@ -38,6 +38,6 @@ set(IMAGE
 zephyr_library_sources(
         ui.c
         ui_helpers.c
-        ui_font_PocketDictPenRegular.c
+        ui_font.c
         ${IMAGE}
 )

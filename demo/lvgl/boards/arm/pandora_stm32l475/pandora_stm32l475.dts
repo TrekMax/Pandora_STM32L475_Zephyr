@@ -19,7 +19,7 @@
 	aliases {
 		led0 = &red_led;
 		pwm-led0 = &pwm_led0;
-		sw0 = &joy_down;
+		sw0 = &joy_up;
 	};
 
 	chosen {
