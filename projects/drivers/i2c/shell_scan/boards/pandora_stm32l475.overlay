@@ -4,6 +4,29 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+
+&pinctrl {
+	i2c3_scl_pc0: i2c3_scl_pc0 {
+		pinmux = <STM32_PINMUX('C', 0, AF4)>;
+	};
+	i2c3_sda_pc1: i2c3_sda_pc1 {
+		pinmux = <STM32_PINMUX('C', 1, AF4)>;
+	};
+	i2c1_scl_pb8: i2c1_scl_pb8 {
+		pinmux = <STM32_PINMUX('B', 8, AF4)>;
+	};
+	i2c1_sda_pb9: i2c1_sda_pb9 {
+		pinmux = <STM32_PINMUX('B', 9, AF4)>;
+	};
+};
+
+
+&i2c1 {
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&i2c1_scl_pb8 &i2c1_sda_pb9>;
+};
+
 &i2c3 {
 	status = "okay";
 	pinctrl-names = "default";
