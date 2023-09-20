@@ -53,6 +53,9 @@ ui_app_t apps[] = {
 lv_obj_t * ui_AppIcon_Wsp;
 lv_obj_t * ui_AppName_Wsp;
 
+#define UI_SCREEN_WIDTH 240
+#define UI_SCREEN_HEIGHT 240
+
 void ui_event_OpenAppAudioPlayer(lv_event_t * e);
 void ui_event_OpenAppSetting(lv_event_t * e);
 void ui_event_OpenAppAudioPlayer(lv_event_t * e);
@@ -330,7 +333,7 @@ void ui_Screen_Home_init(void)
     ui_StatusBar_init(ui_ScreenHome);
 
     ui_ScreenHome_BodyBase = lv_obj_create(ui_ScreenHome);
-    lv_obj_set_size(ui_ScreenHome_BodyBase, UI_SCREEN_WIDTH, UI_SCREEN_WIDTH);
+    lv_obj_set_size(ui_ScreenHome_BodyBase, 456, 140);
     lv_obj_set_pos(ui_ScreenHome_BodyBase, 0, 0);
     lv_obj_set_align(ui_ScreenHome_BodyBase, LV_ALIGN_BOTTOM_LEFT);
     lv_obj_add_flag(ui_ScreenHome_BodyBase, LV_OBJ_FLAG_SCROLL_ONE);     /// Flags
@@ -342,7 +345,7 @@ void ui_Screen_Home_init(void)
     lv_obj_set_style_border_side(ui_ScreenHome_BodyBase, LV_BORDER_SIDE_NONE, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_ScreenHome_Body = lv_obj_create(ui_ScreenHome_BodyBase);
-    lv_obj_set_size(ui_ScreenHome_Body, 720, 140);
+    lv_obj_set_size(ui_ScreenHome_Body, UI_SCREEN_WIDTH*1.5, UI_SCREEN_HEIGHT-40);
     lv_obj_set_pos(ui_ScreenHome_Body, 0, 0);
     lv_obj_set_align(ui_ScreenHome_Body, LV_ALIGN_LEFT_MID);
     lv_obj_clear_flag(ui_ScreenHome_Body, LV_OBJ_FLAG_PRESS_LOCK | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
